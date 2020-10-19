@@ -1,13 +1,482 @@
+/* define all colors as variables */
+:root {
+  --border: rgba(0,0,0,.2);
+  --shadow: #000;
+  --heading: rgba(255,100,0,1);
+  --main: #1d8f13;
+  --text: #000;
+  --textAlt: #fff;
+  --inactive: rgba(0,0,0,.3);
+  --background: #fff;
+  --facebook: #3b5998;
+  --twitter: #00acee;
+  --linkedin: #0077b5;
+  --sendIcon: #868fa2;
+}
+
+/* elements that change color */
+h1{
+  font-weight: 800; 
+  color: var(--text);
+  font-family: 'Museo Sans W01', helvetica, arial, sans-serif;
+  
+}
+
+p { 
+  color: var(--text);
+ 
+}
+
+h2 { 
+  color: var(--heading); 
+}
+h3{
+  color: var(--text);
+}
+
+.Card, 
+.Switch { 
+  border-color: var(--border); 
+}
+
+.icon { 
+  color: var(--inactive); 
+}
+
+.Card button {
+  background: var(--main);
+  color: var(--textAlt);
+}
+
+/* Transitons for smooth theme change */
+*:not(body) {
+  transition: all .5s ease;
+}
+
+/* All other styles */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--background);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.App {
+  margin: 5% 15%;
+}
+
+.Card {
+  padding: 5%;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px -10px black;
+  margin-top: 3rem;
+  height: auto;
+}
+
+.Card button {
+  width: 100%;
+  border-radius: 10px;
+  height: 2rem;
+  font-size: 1rem;
+  box-shadow: 7px 7px 10px -10px black;
+  font-weight: 700;
+  border: none;
+}
+
+.Card .img {
+  width: 100%;
+  height: 200px;
+  opacity: .9;
+  background: url('https://www.fullstacklabs.co/img/developersReact/whylove_3.png') center;
+  background-size: cover;
+}
+
+.Switch {
+  width: 4rem;
+  height: 2rem;
+  margin: 2rem 0;
+  position: relative;
+  border-radius: 10px;
+  border-width: 1px;
+  border-style: solid;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 4px 4px 10px -3px black;
+  background: none;
+  padding: 0; 
+}
+
+.leftColumnBackground{
+  background-color: #1f3e48;
+  height: 100vh;
+}
+.rightColumn_header{
+  
+}
+#textcontent{
+  font-size: 1.5em;
+  text-align:justify;
+  margin-bottom: 0.5em;
+  color: var(--text);
+}
+b{
+  color: var(--text);
+}
+.Switch .icon {
+  font-size: 1.3rem;
+}
+
+button {
+  outline: none;
+  cursor: pointer;
+}
+
+.active {
+  color: var(--heading);
+}
+
+.facebook{
+  color:var(--facebook);
+  
+}
+
+.twitter{
+  color:var(--twitter);
+  
+}
+.linkedin{
+  color:var(--linkedin);
+
+}
+.sendIcon{
+  color:var(--sendIcon);
+}
+
+@media (min-width: 450px) {
+  .App {
+    margin: 5% 20%;
+  }
+}
+
+@media (min-width: 700px) {
+  .App {
+    margin: 5% 30%;
+  }
+}
+
+@media (min-width: 900px) {
+  .App {
+    margin: 5% 35%;
+  }
+}
+
+@media (min-width: 1350px) {
+  .App {
+    margin: 5% 40%;
+  }
+}
+
+.myForm {
+  padding: 42px;
+  min-width: 500px;
+  position: absolute;
+  /* text-align: center; */
+  top: 12em;
+  left: 50%;
+
+  font-size: 2.5rem;
+ 
+
+}
+@media (max-width: 500px) {
+  /* .myForm {
+    min-width: 90%;
+  } */
+}
+
+/* .card {
+  border-radius: 12px;
+  box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.15);
+  background-color: #FFFFFF;
+  color: #252422;
+  margin-bottom: 20px;
+  position: relative;
+  border: 0 none;
+  transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1), box-shadow 200ms ease;
+} */
+
+/*  Comment Box UI */
+
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+ }
+
+ a {
+  color: var(--text);
+    text-decoration: none;
+ }
+
+ul {
+    list-style-type: none;
+}
+
+/** ====================
+ * Lista de Comentarios
+ =======================*/
+.comments-container {
+    /* margin: 60px auto 15px; */
+    width: 691px;
+}
+
+.comments-container h1 {
+    font-size: 36px;
+    color: #283035;
+    font-weight: 400;
+}
+
+.comments-container h1 a {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.comments-list {
+    margin-top: 30px;
+    position: relative;
+}
+
+/**
+ * Lineas / Detalles
+ -----------------------*/
+.comments-list:before {
+    content: '';
+    width: 2px;
+    height: 100%;
+    background: #c7cacb;
+    position: absolute;
+    left: 32px;
+    top: 0;
+}
+
+.comments-list:after {
+    content: '';
+    position: absolute;
+    background: #c7cacb;
+    bottom: 0;
+    left: 27px;
+    width: 7px;
+    height: 7px;
+    border: 3px solid #dee1e3;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.reply-list:before, .reply-list:after {display: none;}
+.reply-list li:before {
+    content: '';
+    width: 60px;
+    height: 2px;
+    background: #c7cacb;
+    position: absolute;
+    top: 25px;
+    left: -55px;
+}
+
+
+.comments-list li {
+    margin-bottom: 15px;
+    display: block;
+    position: relative;
+}
+
+.comments-list li:after {
+    content: '';
+    display: block;
+    clear: both;
+    height: 0;
+    width: 0;
+}
+
+.reply-list {
+    padding-left: 88px;
+    clear: both;
+    margin-top: 15px;
+}
+/**
+ * Avatar
+ ---------------------------*/
+.comments-list .comment-avatar {
+    width: 65px;
+    height: 65px;
+    position: relative;
+    z-index: 99;
+    float: left;
+    border: 3px solid #FFF;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+.comments-list .comment-avatar img {
+    width: 100%;
+    height: 100%;
+}
+
+.reply-list .comment-avatar {
+    width: 50px;
+    height: 50px;
+}
+
+.comment-main-level:after {
+    content: '';
+    width: 0;
+    height: 0;
+    display: block;
+    clear: both;
+}
+/**
+ * Caja del Comentario
+ ---------------------------*/
+.comments-list .comment-box {
+    width: 604px;
+    float: right;
+    position: relative;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+}
+
+.comments-list .comment-box:before, .comments-list .comment-box:after {
+    content: '';
+    height: 0;
+    width: 0;
+    position: absolute;
+    display: block;
+    border-width: 10px 12px 10px 0;
+    border-style: solid;
+    border-color: transparent #FCFCFC;
+    top: 8px;
+    left: -11px;
+}
+
+.comments-list .comment-box:before {
+    border-width: 11px 13px 11px 0;
+    border-color: transparent rgba(0,0,0,0.05);
+    left: -12px;
+}
+
+.reply-list .comment-box {
+    width: 610px;
+}
+.comment-box .comment-head {
+    background: #FCFCFC;
+    padding: 10px 12px;
+    border-bottom: 1px solid #E5E5E5;
+    overflow: hidden;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+}
+
+.comment-box .comment-head i {
+    float: right;
+    margin-left: 14px;
+    position: relative;
+    top: 2px;
+    color: #A6A6A6;
+    cursor: pointer;
+    -webkit-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+}
+
+.comment-box .comment-head i:hover {
+    color: #03658c;
+}
+
+.comment-box .comment-name {
+    color: #283035;
+    font-size: 14px;
+    font-weight: 700;
+    float: left;
+    margin-right: 10px;
+}
+
+.comment-box .comment-name a {
+    color: #283035;
+}
+
+.comment-box .comment-head span {
+    float: left;
+    color: #999;
+    font-size: 13px;
+    position: relative;
+    top: 1px;
+}
+
+.comment-box .comment-content {
+    background: #FFF;
+    padding: 12px;
+    font-size: 15px;
+    color: #595959;
+    -webkit-border-radius: 0 0 4px 4px;
+    -moz-border-radius: 0 0 4px 4px;
+    border-radius: 0 0 4px 4px;
+}
+
+.comment-box .comment-name.by-author, .comment-box .comment-name.by-author a {color: #03658c;}
+.comment-box .comment-name.by-author:after {
+    content: 'autor';
+    background: #03658c;
+    color: #FFF;
+    font-size: 12px;
+    padding: 3px 5px;
+    font-weight: 700;
+    margin-left: 10px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+/** =====================
+ * Responsive
+ ========================*/
+@media only screen and (max-width: 766px) {
+    .comments-container {
+        width: 480px;
+    }
+
+    .comments-list .comment-box {
+        width: 390px;
+    }
+
+    .reply-list .comment-box {
+        width: 320px;
+    }
+}
+
+
+
+
+/* End of Comment Box Ui */

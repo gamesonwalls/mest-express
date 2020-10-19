@@ -4,9 +4,19 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import {ThemeProvider} from './components/context/ThemeContext';
+import {VotesProvider} from './components/context/VoteContext';
+import {LoginProvider} from './components/context/LoginContext';
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider>
+      <VotesProvider>
+        <LoginProvider>
+              <App />
+        </LoginProvider>
+      </VotesProvider>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
