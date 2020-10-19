@@ -1,8 +1,10 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
+/client/node_modules
+/client/src/others
 /node_modules
-/src/others
+/src
 /.pnp
 .pnp.js
 
