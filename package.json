@@ -25,10 +25,7 @@
     "uuid": "^8.3.1"
   },
   "scripts": {
-    "client": "cd client && npm start",
-    "server": "nodemon server/app.js",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "dev:server": "cd client && npm build && cd .. && npm start",
+    "dev": "nodemon server/app.js",
     "start": "node server/app.js",
     "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
